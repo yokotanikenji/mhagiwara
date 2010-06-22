@@ -1,3 +1,4 @@
+
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -5,7 +6,7 @@
 # Baidu Mobile Corpus usage sample script (synonym aquisition)
 # 
 # Copyright (c) 2010 Baidu Japan, Inc.
-# URL: http://ww.baidu.jp/unlp/
+# URL: http://www.baidu.jp/unlp/
 #
 # Usage: python bmc_sample.py <2gm file> <word>
 # 
