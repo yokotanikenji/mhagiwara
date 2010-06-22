@@ -1,4 +1,3 @@
-
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -14,6 +13,9 @@
 import sys
 import re
 import math
+import codecs
+
+sys.stdout = codecs.getwriter('utf_8')(sys.stdout)
 
 from collections import defaultdict
 
