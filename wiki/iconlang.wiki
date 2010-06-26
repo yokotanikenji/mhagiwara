@@ -6,4 +6,6 @@ What is this? "iconlang" is a new ideographic writing system based on identicon.
 
 = Details =
 
-identicon
+The idea "iconlang" is heavily based on "identicon," which is a graphical representation system of hash values. The original identicon idea is introduced here:
+
+http://www.radiumsoftware.com/0702.html
