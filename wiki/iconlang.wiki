@@ -49,3 +49,22 @@ The correspondence table from bit range to each part is below:
 || 18-22 (5) ||   blue          ||
 || 23-27 (5) ||   green         ||
 || 28-32 (5) ||   red           ||
+
+total = 32 bits
+
+= iconlang details =
+
+||  1- 2 (2) ||   middleType    ||
+||     3 (1) ||   middleInvert  ||
+||  4- 7 (4) ||   cornerType    ||
+||     8 (1) ||   cornerInvert  ||
+||  9-10 (2) ||   cornerTurn    ||
+|| 11-14 (4) ||   sideType      || 
+||    15 (1) ||   sideInvert    ||
+|| 16-17 (2) ||   sideTurn      ||
+|| 18-20 (3) ||   blue          ||
+|| 21-23 (3) ||   green         ||
+|| 24-26 (3) ||   red           ||
+|| 27-34 (8) ||   corner masks  ||
+
+total = 34 bits
