@@ -4,8 +4,28 @@
 
 What is this? "iconlang" is a new ideographic writing system based on identicon. This maps each English (or any other languages) word into single character, like Chinese, which saves a lot of space and time, making it possible for us to read English sentences very rapidly.
 
-= Details =
+= What's identicon? =
 
 The idea "iconlang" is heavily based on "identicon," which is a graphical representation system of hash values. The original identicon idea is introduced here:
 
 http://www.radiumsoftware.com/0702.html
+
+A python implementation of "iconlang" can be found here, which depends on PIL (Python Image Library):
+
+http://coderepos.org/share/browser/lang/python/misc/identicon.py
+
+= identicon details =
+
+"identicon" algorithm first decodes the input hash value (32 bits) into different bit fragments as below (from LSB to MSB):
+
+||  1- 2 (2) ||   middleType    ||
+||     3 (1) ||   middleInvert  ||
+||  4- 7 (4) ||   cornerType    ||
+||     8 (1) ||   cornerInvert  ||
+||  9-10 (2) ||   cornerTurn    ||
+|| 11-14 (4) ||   sideType      || 
+||    15 (1) ||   sideInvert    ||
+|| 16-17 (2) ||   sideTurn      ||
+|| 18-22 (5) ||   blue          ||
+|| 23-27 (5) ||   green         ||
+|| 28-32 (5) ||   red           ||
