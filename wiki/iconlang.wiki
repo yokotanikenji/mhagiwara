@@ -18,6 +18,26 @@ http://coderepos.org/share/browser/lang/python/misc/identicon.py
 
 "identicon" algorithm first decodes the input hash value (32 bits) into different bit fragments as below (from LSB to MSB):
 
+(by the way, the above Python implementation has a wrong part. the __decode()__ function should be like this:
+{{{
+    def decode(self, code):
+        # decode the code        
+        middleType  = self.MIDDLE_PATCH_SET[code & 0x03]
+        middleInvert= (code >> 2) & 0x01
+        cornerType  = (code >> 3) & 0x0F
+        cornerInvert= (code >> 7) & 0x01
+        cornerTurn  = (code >> 8) & 0x03
+        sideType    = (code >> 10) & 0x0F
+        sideInvert  = (code >> 14) & 0x01
+        sideTurn    = (code >> 15) & 0x03
+        blue        = (code >> 17) & 0x1F
+        green       = (code >> 22) & 0x1F
+        red         = (code >> 27) & 0x1F
+        ...
+}}}
+
+The correspondence table from bit range to each part is below:
+
 ||  1- 2 (2) ||   middleType    ||
 ||     3 (1) ||   middleInvert  ||
 ||  4- 7 (4) ||   cornerType    ||
