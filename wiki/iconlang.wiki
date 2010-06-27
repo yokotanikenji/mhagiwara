@@ -1,8 +1,10 @@
-#summary iconlang - new ideographic characters based on identicon for speed-reading
+#summary iconlang - new ideographic characters for speed-reading (速読のための新しい象形文字体系)
 
-= Introduction to iconlang =
+= Introduction to iconlang （iconlangの紹介）=
 
 What is this? "iconlang" is a new ideographic writing system based on identicon. This maps each English (or any other languages) word into single character, like Chinese, which saves a lot of space and time, making it possible for us to read English sentences very rapidly.
+
+"iconlang" は、identicon をベースとした新しい象形文字体系です。
 
 = What's identicon? =
 
