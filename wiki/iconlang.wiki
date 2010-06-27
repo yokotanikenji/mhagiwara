@@ -2,11 +2,11 @@
 
 = Introduction to iconlang （iconlangの紹介）=
 
-What is this? "iconlang" is a new ideographic writing system based on identicon. This maps each English (or any other languages) word into single character, like Chinese, which saves a lot of space and time, making it possible for us to read English sentences very rapidly.
+What is this? "iconlang" is a new ideographic writing system based on identicon. This maps each English (or any other languages) word into single character, like Chinese, which increases readability, saves a lot of space and time, making it possible for us to read English sentences very rapidly.
 
-"iconlang" は、identicon をベースとした新しい象形文字体系です。
+"iconlang" は、identicon をベースとした新しい象形文字体系です。英語（もしくは他のあらゆる言語）の単語を、漢字のように、単一の「文字」にマッピングします。これによって識別性が向上し、表記スペースや時間も短縮するのため、英語の文を非常に高速に読むことができるようになります。
 
-= What's identicon? =
+= What's identicon? (そもそも identicon とは何か）=
 
 The idea "iconlang" is heavily based on "identicon," which is a graphical representation system of hash values. The original identicon idea is introduced here:
 
