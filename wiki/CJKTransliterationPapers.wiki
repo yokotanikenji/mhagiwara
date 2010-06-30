@@ -1,0 +1,30 @@
+#CJK Transliteration Paper List
+
+= Introduction =
+
+
+= Details =
+
+Kevin Knight and Jonathan Graehl.
+Machine Transliteration
+Computational Linguistics, 24(4), 1998
+http://acl.ldc.upenn.edu/J/J98/J98-4003.pdf
+　→ milestone "Machine Transliteration" 英語－カタカナ翻字
+
+Eric Brill and Robert C. Moore.
+An Improved Error Model for Noisy Channel Spelling Correction, 
+http://acl.ldc.upenn.edu/P/P00/P00-1037.pdf
+　→ alpha-beta model
+
+E. Brill, G. Kacmarcik, C. Brockett.
+Automatically Harvesting Katakana-English Term Pairs from Search Engine Query Logs
+In Proc. of NLPPRS, pp. 393-399.
+2002.
+http://research.microsoft.com/pubs/68935/nlprs2001-harvesting_katakana_from_query_logs.pdf
+　→　クエリログ（対応なし）から英語ーカタカナ翻字を抽出する話
+
+H. Li, M. Zhang, and J. Su. 
+A joint source channel model for machine transliteration.
+In Proc. of ACL 2004. pp.159-166
+http://www.aclweb.org/anthology/P/P04/P04-1021.pdf
+　→ 翻字モデルを source-channel で定式化する話
