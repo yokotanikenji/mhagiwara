@@ -1,5 +1,15 @@
 #summary iconlang - new ideographic characters for speed-reading (速読のための新しい表意文字体系)
 
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/word.png" width="32"> = "word"
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/god.png" width="32"> = "god"
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/begin.png" width="32"> = "begin"
+
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/in.png" width="32"> = "in"
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/the.png" width="32"> = "the"
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/was.png" width="32"> = "was"
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/and.png" width="32"> = "and"
+<img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/ing.png" width="32"> = "-ing"
+
 = Introduction to iconlang （iconlangの紹介）=
 
 What is this? "iconlang" is a new ideographic writing system based on identicon. This maps each English (or any other languages) word into single character, like Chinese, which increases readability, saves a lot of space and time, making it possible for us to read English sentences very rapidly.
