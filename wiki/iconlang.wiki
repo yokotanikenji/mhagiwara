@@ -65,7 +65,8 @@ http://coderepos.org/share/browser/lang/python/misc/identicon.py
         ...
 }}}
 
-The correspondence table from bit range to each part is below:
+The correspondence table from bit range to each part is below. The number range represents the bit range and the numbers in parentheses are the bit widths:
+
 
 ||  1- 2 (2) ||   middleType    ||
 ||     3 (1) ||   middleInvert  ||
@@ -80,6 +81,10 @@ The correspondence table from bit range to each part is below:
 || 28-32 (5) ||   red           ||
 
 total = 32 bits
+
+Here are some terms which compose identicon icons. One single identicon consists of in total of 9 "patches," i.e, simple geometric patterns such as rectangles and triangles. 
+
+There is one "middle" patch which is placed at the center of an identicon, whose pattern, invert (whether or not the color is inverted) are decided by "middleType" and "middleInvert", respectively.
 
 = iconlang details =
 
