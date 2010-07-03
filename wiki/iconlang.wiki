@@ -1,4 +1,4 @@
-b#summary iconlang - new ideographic characters for speed-reading (速読のための新しい表意文字体系)
+#summary iconlang - new ideographic characters for speed-reading (速読のための新しい表意文字体系)
 
 
 <img src="http://mhagiwara.googlecode.com/svn/trunk/misc/iconlang/icons/word.png" width="32"> = "word"
