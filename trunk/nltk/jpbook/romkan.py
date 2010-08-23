@@ -23,157 +23,165 @@ def pairs(arr, size=2):
     for i in range(0, len(arr)-1, size):
         yield arr[i:i+size]
 
-KUNREITAB = u"""ぁ	xa	あ	a	ぃ	xi	い	i	ぅ	xu
-う	u	う゛	vu	う゛ぁ	va	う゛ぃ	vi 	う゛ぇ	ve
-う゛ぉ	vo	ぇ	xe	え	e	ぉ	xo	お	o 
+KUNREITAB = u"""ァ	xa	ア	a	ィ	xi	イ	i	ゥ	xu
+ウ	u	ヴ	vu	ヴァ	va	ヴィ	vi 	ヴェ	ve
+ヴォ	vo	ェ	xe	エ	e	ォ	xo	オ	o 
 
-か	ka	が	ga	き	ki	きゃ	kya	きゅ	kyu 
-きょ	kyo	ぎ	gi	ぎゃ	gya	ぎゅ	gyu	ぎょ	gyo 
-く	ku	ぐ	gu	け	ke	げ	ge	こ	ko
-ご	go 
+カ	ka	ガ	ga	キ	ki	キャ	kya	キュ	kyu 
+キョ	kyo	ギ	gi	ギャ	gya	ギュ	gyu	ギョ	gyo 
+ク	ku	グ	gu	ケ	ke	ゲ	ge	コ	ko
+ゴ	go 
 
-さ	sa	ざ	za	し	si	しゃ	sya	しゅ	syu 
-しょ	syo	じ	zi	じゃ	zya	じゅ	zyu	じょ	zyo 
-す	su	ず	zu	せ	se	ぜ	ze	そ	so
-ぞ	zo 
+サ	sa	ザ	za	シ	si	シャ	sya	シュ	syu 
+ショ	syo	シェ    sye
+ジ	zi	ジャ	zya	ジュ	zyu	ジョ	zyo 
+ス	su	ズ	zu	セ	se	ゼ	ze	ソ	so
+ゾ	zo 
 
-た	ta	だ	da	ち	ti	ちゃ	tya	ちゅ	tyu 
-ちょ	tyo	ぢ	di	ぢゃ	dya	ぢゅ	dyu	ぢょ	dyo 
+タ	ta	ダ	da	チ	ti	チャ	tya	チュ	tyu 
+チョ	tyo	ヂ	di	ヂャ	dya	ヂュ	dyu	ヂョ	dyo 
+ティ    ti
 
-っ	xtu 
-っう゛	vvu	っう゛ぁ	vva	っう゛ぃ	vvi 
-っう゛ぇ	vve	っう゛ぉ	vvo 
-っか	kka	っが	gga	っき	kki	っきゃ	kkya 
-っきゅ	kkyu	っきょ	kkyo	っぎ	ggi	っぎゃ	ggya 
-っぎゅ	ggyu	っぎょ	ggyo	っく	kku	っぐ	ggu 
-っけ	kke	っげ	gge	っこ	kko	っご	ggo	っさ	ssa 
-っざ	zza	っし	ssi	っしゃ	ssya 
-っしゅ	ssyu	っしょ	ssho 
-っじ	zzi	っじゃ	zzya	っじゅ	zzyu	っじょ	zzyo 
-っす	ssu	っず	zzu	っせ	sse	っぜ	zze	っそ	sso 
-っぞ	zzo	った	tta	っだ	dda	っち	tti 
-っちゃ	ttya	っちゅ	ttyu	っちょ	ttyo	っぢ	ddi 
-っぢゃ	ddya	っぢゅ	ddyu	っぢょ	ddyo	っつ	ttu 
-っづ	ddu	って	tte	っで	dde	っと	tto	っど	ddo 
-っは	hha	っば	bba	っぱ	ppa	っひ	hhi 
-っひゃ	hhya	っひゅ	hhyu	っひょ	hhyo	っび	bbi 
-っびゃ	bbya	っびゅ	bbyu	っびょ	bbyo	っぴ	ppi 
-っぴゃ	ppya	っぴゅ	ppyu	っぴょ	ppyo	っふ	hhu 
-っふぁ	ffa	っふぃ	ffi	っふぇ	ffe	っふぉ	ffo 
-っぶ	bbu	っぷ	ppu	っへ	hhe	っべ	bbe	っぺ    ppe
-っほ	hho	っぼ	bbo	っぽ	ppo	っや	yya	っゆ	yyu 
-っよ	yyo	っら	rra	っり	rri	っりゃ	rrya 
-っりゅ	rryu	っりょ	rryo	っる	rru	っれ	rre 
-っろ	rro 
+ッ	xtu 
+ッヴ	vvu	ッヴァ	vva	ッヴィ	vvi 
+ッヴェ	vve	ッヴォ	vvo 
+ッカ	kka	ッガ	gga	ッキ	kki	ッキャ	kkya 
+ッキュ	kkyu	ッキョ	kkyo	ッギ	ggi	ッギャ	ggya 
+ッギュ	ggyu	ッギョ	ggyo	ック	kku	ッグ	ggu 
+ッケ	kke	ッゲ	gge	ッコ	kko	ッゴ	ggo	ッサ	ssa 
+ッザ	zza	ッシ	ssi	ッシャ	ssya 
+ッシュ	ssyu	ッショ	ssho	ッシェ	ssye
+ッジ	zzi	ッジャ	zzya	ッジュ	zzyu	ッジョ	zzyo
+ッス	ssu	ッズ	zzu	ッセ	sse	ッゼ	zze	ッソ	sso 
+ッゾ	zzo	ッタ	tta	ッダ	dda	ッチ	tti     ッティ  tti
+ッチャ	ttya	ッチュ	ttyu	ッチョ	ttyo	ッヂ	ddi 
+ッヂャ	ddya	ッヂュ	ddyu	ッヂョ	ddyo	ッツ	ttu 
+ッヅ	ddu	ッテ	tte	ッデ	dde	ット	tto	ッド	ddo 
+ッドゥ  ddu
+ッハ	hha	ッバ	bba	ッパ	ppa	ッヒ	hhi 
+ッヒャ	hhya	ッヒュ	hhyu	ッヒョ	hhyo	ッビ	bbi 
+ッビャ	bbya	ッビュ	bbyu	ッビョ	bbyo	ッピ	ppi 
+ッピャ	ppya	ッピュ	ppyu	ッピョ	ppyo	ッフ	hhu     ッフュ  ffu
+ッファ	ffa	ッフィ	ffi	ッフェ	ffe	ッフォ	ffo 
+ッブ	bbu	ップ	ppu	ッヘ	hhe	ッベ	bbe	ッペ    ppe
+ッホ	hho	ッボ	bbo	ッポ	ppo	ッヤ	yya	ッユ	yyu 
+ッヨ	yyo	ッラ	rra	ッリ	rri	ッリャ	rrya 
+ッリュ	rryu	ッリョ	rryo	ッル	rru	ッレ	rre 
+ッロ	rro 
 
-つ	tu	づ	du	て	te	で	de	と	to
-ど	do 
+ツ	tu	ヅ	du	テ	te	デ	de	ト	to
+ド	do      ドゥ    du
 
-な	na	に	ni	にゃ	nya	にゅ	nyu	にょ	nyo 
-ぬ	nu	ね	ne	の	no 
+ナ	na	ニ	ni	ニャ	nya	ニュ	nyu	ニョ	nyo 
+ヌ	nu	ネ	ne	ノ	no 
 
-は	ha	ば	ba	ぱ	pa	ひ	hi	ひゃ	hya 
-ひゅ	hyu	ひょ	hyo	び	bi	びゃ	bya	びゅ	byu 
-びょ	byo	ぴ	pi	ぴゃ	pya	ぴゅ	pyu	ぴょ	pyo 
-ふ	hu	ふぁ	fa	ふぃ	fi	ふぇ	fe	ふぉ	fo 
-ぶ	bu	ぷ	pu	へ	he	べ	be	ぺ	pe
-ほ	ho	ぼ	bo	ぽ	po 
+ハ	ha	バ	ba	パ	pa	ヒ	hi	ヒャ	hya 
+ヒュ	hyu	ヒョ	hyo	ビ	bi	ビャ	bya	ビュ	byu 
+ビョ	byo	ピ	pi	ピャ	pya	ピュ	pyu	ピョ	pyo 
+フ	hu	ファ	fa	フィ	fi	フェ	fe	フォ	fo
+フュ    fu
+ブ	bu	プ	pu	ヘ	he	ベ	be	ペ	pe
+ホ	ho	ボ	bo	ポ	po 
 
-ま	ma	み	mi	みゃ	mya	みゅ	myu	みょ	myo 
-む	mu	め	me	も	mo 
+マ	ma	ミ	mi	ミャ	mya	ミュ	myu	ミョ	myo 
+ム	mu	メ	me	モ	mo 
 
-ゃ	xya	や	ya	ゅ	xyu	ゆ	yu	ょ	xyo
-よ	yo
+ャ	xya	ヤ	ya	ュ	xyu	ユ	yu	ョ	xyo
+ヨ	yo
 
-ら	ra	り	ri	りゃ	rya	りゅ	ryu	りょ	ryo 
-る	ru	れ	re	ろ	ro 
+ラ	ra	リ	ri	リャ	rya	リュ	ryu	リョ	ryo 
+ル	ru	レ	re	ロ	ro 
 
-ゎ	xwa	わ	wa	ゐ	wi	ゑ	we
-を	wo	ん	n 
+ヮ	xwa	ワ	wa	ウィ    wi      ヰ	wi	ヱ	we      ウェ	we
+ヲ	wo	ウォ    wo      ン	n 
 
-ん     n'
-でぃ   dyi
+ン     n'
+ディ   dyi
 ー     -
-ちぇ    tye
-っちぇ	ttye
-じぇ	zye
+チェ    tye
+ッチェ	ttye
+ジェ	zye
 """
 
-HEPBURNTAB = u"""ぁ	xa	あ	a	ぃ	xi	い	i	ぅ	xu
-う	u	う゛	vu	う゛ぁ	va	う゛ぃ	vi	う゛ぇ	ve
-う゛ぉ	vo	ぇ	xe	え	e	ぉ	xo	お	o
+HEPBURNTAB = u"""ァ	xa	ア	a	ィ	xi	イ	i	ゥ	xu
+ウ	u	ヴ	vu	ヴァ	va	ヴィ	vi	ヴェ	ve
+ヴォ	vo	ェ	xe	エ	e	ォ	xo	オ	o
 	
 
-か	ka	が	ga	き	ki	きゃ	kya	きゅ	kyu
-きょ	kyo	ぎ	gi	ぎゃ	gya	ぎゅ	gyu	ぎょ	gyo
-く	ku	ぐ	gu	け	ke	げ	ge	こ	ko
-ご	go	
+カ	ka	ガ	ga	キ	ki	キャ	kya	キュ	kyu
+キョ	kyo	ギ	gi	ギャ	gya	ギュ	gyu	ギョ	gyo
+ク	ku	グ	gu	ケ	ke	ゲ	ge	コ	ko
+ゴ	go	
 
-さ	sa	ざ	za	し	shi	しゃ	sha	しゅ	shu
-しょ	sho	じ	ji	じゃ	ja	じゅ	ju	じょ	jo
-す	su	ず	zu	せ	se	ぜ	ze	そ	so
-ぞ	zo
+サ	sa	ザ	za	シ	shi	シャ	sha	シュ	shu
+ショ	sho	シェ    she
+ジ	ji	ジャ	ja	ジュ	ju	ジョ	jo
+ス	su	ズ	zu	セ	se	ゼ	ze	ソ	so
+ゾ	zo
 
-た	ta	だ	da	ち	chi	ちゃ	cha	ちゅ	chu
-ちょ	cho	ぢ	di	ぢゃ	dya	ぢゅ	dyu	ぢょ	dyo
+タ	ta	ダ	da	チ	chi	チャ	cha	チュ	chu
+チョ	cho	ヂ	di	ヂャ	dya	ヂュ	dyu	ヂョ	dyo
+ティ    ti
 
-っ	xtsu	
-っう゛	vvu	っう゛ぁ	vva	っう゛ぃ	vvi	
-っう゛ぇ	vve	っう゛ぉ	vvo	
-っか	kka	っが	gga	っき	kki	っきゃ	kkya	
-っきゅ	kkyu	っきょ	kkyo	っぎ	ggi	っぎゃ	ggya	
-っぎゅ	ggyu	っぎょ	ggyo	っく	kku	っぐ	ggu	
-っけ	kke	っげ	gge	っこ	kko	っご	ggo	っさ	ssa
-っざ	zza	っし	sshi	っしゃ	ssha	
-っしゅ	sshu	っしょ	ssho	
-っじ	jji	っじゃ	jja	っじゅ	jju	っじょ	jjo	
-っす	ssu	っず	zzu	っせ	sse	っぜ	zze	っそ	sso
-っぞ	zzo	った	tta	っだ	dda	っち	cchi	
-っちゃ	ccha	っちゅ	cchu	っちょ	ccho	っぢ	ddi	
-っぢゃ	ddya	っぢゅ	ddyu	っぢょ	ddyo	っつ	ttsu	
-っづ	ddu	って	tte	っで	dde	っと	tto	っど	ddo
-っは	hha	っば	bba	っぱ	ppa	っひ	hhi	
-っひゃ	hhya	っひゅ	hhyu	っひょ	hhyo	っび	bbi	
-っびゃ	bbya	っびゅ	bbyu	っびょ	bbyo	っぴ	ppi	
-っぴゃ	ppya	っぴゅ	ppyu	っぴょ	ppyo	っふ	ffu	
-っふぁ	ffa	っふぃ	ffi	っふぇ	ffe	っふぉ	ffo	
-っぶ	bbu	っぷ	ppu	っへ	hhe	っべ	bbe	っぺ	ppe
-っほ	hho	っぼ	bbo	っぽ	ppo	っや	yya	っゆ	yyu
-っよ	yyo	っら	rra	っり	rri	っりゃ	rrya	
-っりゅ	rryu	っりょ	rryo	っる	rru	っれ	rre	
-っろ	rro	
+ッ	xtsu	
+ッヴ	vvu	ッヴァ	vva	ッヴィ	vvi	
+ッヴェ	vve	ッヴォ	vvo	
+ッカ	kka	ッガ	gga	ッキ	kki	ッキャ	kkya	
+ッキュ	kkyu	ッキョ	kkyo	ッギ	ggi	ッギャ	ggya	
+ッギュ	ggyu	ッギョ	ggyo	ック	kku	ッグ	ggu	
+ッケ	kke	ッゲ	gge	ッコ	kko	ッゴ	ggo	ッサ	ssa
+ッザ	zza	ッシ	sshi	ッシャ	ssha	
+ッシュ	sshu	ッショ	ssho	ッシェ  sshe
+ッジ	jji	ッジャ	jja	ッジュ	jju	ッジョ	jjo	
+ッス	ssu	ッズ	zzu	ッセ	sse	ッゼ	zze	ッソ	sso
+ッゾ	zzo	ッタ	tta	ッダ	dda	ッチ	cchi	ッティ  tti
+ッチャ	ccha	ッチュ	cchu	ッチョ	ccho	ッヂ	ddi	
+ッヂャ	ddya	ッヂュ	ddyu	ッヂョ	ddyo	ッツ	ttsu	
+ッヅ	ddu	ッテ	tte	ッデ	dde	ット	tto	ッド	ddo
+ッドゥ  ddu
+ッハ	hha	ッバ	bba	ッパ	ppa	ッヒ	hhi	
+ッヒャ	hhya	ッヒュ	hhyu	ッヒョ	hhyo	ッビ	bbi	
+ッビャ	bbya	ッビュ	bbyu	ッビョ	bbyo	ッピ	ppi	
+ッピャ	ppya	ッピュ	ppyu	ッピョ	ppyo	ッフ	ffu     ッフュ  ffu
+ッファ	ffa	ッフィ	ffi	ッフェ	ffe	ッフォ	ffo	
+ッブ	bbu	ップ	ppu	ッヘ	hhe	ッベ	bbe	ッペ	ppe
+ッホ	hho	ッボ	bbo	ッポ	ppo	ッヤ	yya	ッユ	yyu
+ッヨ	yyo	ッラ	rra	ッリ	rri	ッリャ	rrya	
+ッリュ	rryu	ッリョ	rryo	ッル	rru	ッレ	rre	
+ッロ	rro	
 
-つ	tsu	づ	du	て	te	で	de	と	to
-ど	do	
+ツ	tsu	ヅ	du	テ	te	デ	de	ト	to
+ド	do      ドゥ    du
 
-な	na	に	ni	にゃ	nya	にゅ	nyu	にょ	nyo
-ぬ	nu	ね	ne	の	no	
+ナ	na	ニ	ni	ニャ	nya	ニュ	nyu	ニョ	nyo
+ヌ	nu	ネ	ne	ノ	no	
 
-は	ha	ば	ba	ぱ	pa	ひ	hi	ひゃ	hya
-ひゅ	hyu	ひょ	hyo	び	bi	びゃ	bya	びゅ	byu
-びょ	byo	ぴ	pi	ぴゃ	pya	ぴゅ	pyu	ぴょ	pyo
-ふ	fu	ふぁ	fa	ふぃ	fi	ふぇ	fe	ふぉ	fo
-ぶ	bu	ぷ	pu	へ	he	べ	be	ぺ	pe
-ほ	ho	ぼ	bo	ぽ	po	
+ハ	ha	バ	ba	パ	pa	ヒ	hi	ヒャ	hya
+ヒュ	hyu	ヒョ	hyo	ビ	bi	ビャ	bya	ビュ	byu
+ビョ	byo	ピ	pi	ピャ	pya	ピュ	pyu	ピョ	pyo
+フ	fu	ファ	fa	フィ	fi	フェ	fe	フォ	fo
+フュ    fu
+ブ	bu	プ	pu	ヘ	he	ベ	be	ペ	pe
+ホ	ho	ボ	bo	ポ	po	
 
-ま	ma	み	mi	みゃ	mya	みゅ	myu	みょ	myo
-む	mu	め	me	も	mo
+マ	ma	ミ	mi	ミャ	mya	ミュ	myu	ミョ	myo
+ム	mu	メ	me	モ	mo
 
-ゃ	xya	や	ya	ゅ	xyu	ゆ	yu	ょ	xyo
-よ	yo	
+ャ	xya	ヤ	ya	ュ	xyu	ユ	yu	ョ	xyo
+ヨ	yo	
 
-ら	ra	り	ri	りゃ	rya	りゅ	ryu	りょ	ryo
-る	ru	れ	re	ろ	ro	
+ラ	ra	リ	ri	リャ	rya	リュ	ryu	リョ	ryo
+ル	ru	レ	re	ロ	ro	
 
-ゎ	xwa	わ	wa	ゐ	wi	ゑ	we
-を	wo	ん	n	
+ヮ	xwa	ワ	wa	ウィ    wi      ヰ	wi	ヱ	we      ウェ    we
+ヲ	wo	ウォ    wo      ン	n	
 
-ん     n'
-でぃ   dyi
+ン     n'
+ディ   di
 ー     -
-ちぇ    che
-っちぇ	cche
-じぇ	je"""
+チェ    che
+ッチェ	cche
+ジェ	je"""
 
 KANROM = {}
 ROMKAN = {}
@@ -182,6 +190,13 @@ for pair in pairs(re.split("\s+", KUNREITAB + HEPBURNTAB)):
     kana, roma = pair
     KANROM[kana] = roma
     ROMKAN[roma] = kana
+
+# special modification
+# wo -> ヲ, but ヲ/ウォ -> wo
+# du -> ヅ, but ヅ/ドゥ -> du
+# we -> ウェ, ウェ -> we
+ROMKAN.update( {"du": u"ヅ", "di": u"ヂ", "fu": u"フ", "ti": u"チ",
+                "wi": u"ウィ", "we": u"ウェ", "wo": u"ヲ" } )
 
 # Sort in long order so that a longer Romaji sequence precedes.
 
@@ -203,6 +218,8 @@ TO_KUNREI =  {}
 for kun, hep in zip(KUNREI, HEPBURN):
     TO_HEPBURN[kun] = hep
     TO_KUNREI[hep] = kun
+
+TO_HEPBURN.update( {'ti': 'chi' })
 
 def normalize_double_n(str):
     str = re.sub("nn", "n'", str)
@@ -240,22 +257,31 @@ def expand_consonant(str):
     return [x for x in ROMKAN.keys() if re.match("^%s.$"%str, x)]
 
 if __name__ == '__main__':
-    assert to_kana("kanji") == u"かんじ"
-    assert to_kana("kanzi") == u"かんじ"
-    assert to_kana("kannji") == u"かんじ"
-    assert to_kana("chie") == u"ちえ"
-    assert to_kana("tie") == u"ちえ"
-    assert to_kana("kyouju") == u"きょうじゅ"
-    assert to_kana("syuukyou") == u"しゅうきょう"
-    assert to_kana("shuukyou") == u"しゅうきょう"
-    assert to_kana("saichuu") == u"さいちゅう"
-    assert to_kana("saityuu") == u"さいちゅう"
-    assert to_kana("cheri-") == u"ちぇりー"
-    assert to_kana("tyeri-") == u"ちぇりー"
-    assert to_kana("shinrai") == u"しんらい"
-    assert to_kana("sinrai") == u"しんらい"
-    assert to_kana("hannnou") == u"はんのう"
-    assert to_kana("han'nou") == u"はんのう"
+    assert to_kana("kanji") == u"カンジ"
+    assert to_kana("kanzi") == u"カンジ"
+    assert to_kana("kannji") == u"カンジ"
+    assert to_kana("chie") == u"チエ"
+    assert to_kana("tie") == u"チエ"
+    assert to_kana("kyouju") == u"キョウジュ"
+    assert to_kana("syuukyou") == u"シュウキョウ"
+    assert to_kana("shuukyou") == u"シュウキョウ"
+    assert to_kana("saichuu") == u"サイチュウ"
+    assert to_kana("saityuu") == u"サイチュウ"
+    assert to_kana("cheri-") == u"チェリー"
+    assert to_kana("tyeri-") == u"チェリー"
+    assert to_kana("shinrai") == u"シンライ"
+    assert to_kana("sinrai") == u"シンライ"
+    assert to_kana("hannnou") == u"ハンノウ"
+    assert to_kana("han'nou") == u"ハンノウ"
+
+    assert to_kana("wo") == u"ヲ"
+    assert to_kana("we") == u"ウェ"
+    assert to_kana("du") == u"ヅ"
+    assert to_kana("she") == u"シェ"
+    assert to_kana("di") == u"ヂ"
+    assert to_kana("fu") == u"フ"
+    assert to_kana("ti") == u"チ"
+    assert to_kana("wi") == u"ウィ"
 
     assert to_hepburn("kannzi") == "kanji"
     assert to_hepburn("tie") == "chie"
@@ -263,12 +289,12 @@ if __name__ == '__main__':
     assert to_kunrei("kanji") == "kanzi"
     assert to_kunrei("chie") == "tie"
 
-    assert to_kana("je") == u"じぇ"
-    assert to_kana("e-jento") == u"えーじぇんと"
+    assert to_kana("je") == u"ジェ"
+    assert to_kana("e-jento") == u"エージェント"
 
-    assert to_roma(u"かんじ") == "kanji"
-    assert to_roma(u"ちゃう") == "chau"
-    assert to_roma(u"はんのう") == "han'nou"
+    assert to_roma(u"カンジ") == "kanji"
+    assert to_roma(u"チャウ") == "chau"
+    assert to_roma(u"ハンノウ") == "han'nou"
 
     assert not is_consonant("a")
     assert is_consonant("k")
@@ -282,6 +308,6 @@ if __name__ == '__main__':
     
     assert sorted(expand_consonant("ky")) == ['kya', 'kyo', 'kyu']
     assert sorted(expand_consonant("kk")) == ["kka", "kke", "kki", "kko", "kku"]
-    assert sorted(expand_consonant("sh")) == ["sha", "shi", "sho", "shu"]
-    assert sorted(expand_consonant("sy")) == ["sya", "syo", "syu"]
+    assert sorted(expand_consonant("sh")) == ["sha", "she", "shi", "sho", "shu"]
+    assert sorted(expand_consonant("sy")) == ["sya", "sye", "syo", "syu"]
     assert sorted(expand_consonant("ch")) == ["cha", "che", "chi", "cho", "chu"]
