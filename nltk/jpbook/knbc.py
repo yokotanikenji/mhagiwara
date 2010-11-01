@@ -129,13 +129,16 @@ def demo():
     print knbc.fileids()[:10]
     print ''.join( knbc.words()[:100] )
 
-    print '\n\n'.join( '%s' % tree for tree in knbc.parsed_sents()[:10] )
+    print '\n\n'.join( '%s' % tree for tree in knbc.parsed_sents()[:2] )
 
     knbc.morphs2str = lambda morphs: '/'.join(
         "%s(%s)"%(m[0], m[1].split(' ')[2]) for m in morphs if m[0] != 'EOS'
         ).encode('utf-8')
 
-    print '\n\n'.join( '%s' % tree for tree in knbc.parsed_sents()[:10] )
+    print '\n\n'.join( '%s' % tree for tree in knbc.parsed_sents()[:2] )
+
+    print '\n'.join( ' '.join("%s/%s"%(w[0], w[1].split(' ')[2]) for w in sent)
+                     for sent in knbc.tagged_sents()[0:2] )
 
 def test():
     
@@ -149,5 +152,5 @@ def test():
     assert type(knbc.tagged_sents()[0][0]) == tuple
 
 if __name__ == '__main__':
-    # demo()
-    test()
+    demo()
+    # test()
